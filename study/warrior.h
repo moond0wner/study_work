@@ -8,7 +8,7 @@
 class Warrior : virtual public NPC
 {
 protected:
-    short strenght{21};
+    short strength{21};
     std::vector<Weapon> weapons;
 
 public:
@@ -18,6 +18,6 @@ public:
 
     void Create() override;
     void GetInfo() override;
-    void GetWeapon();
+    Weapon& GetWeapon();
     void Recalculate();
 };

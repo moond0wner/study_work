@@ -30,30 +30,33 @@ void Warrior::Create()
     cout << "Вы создали война\nЗадайте имя игрока\n";
     cin >> name;
 
-    GetInfo();
     GetWeapon();
 }
 
 void Warrior::GetInfo()
 {
     NPC::GetInfo();
-    cout << "Сила " << strenght << endl;
+    cout << "Сила " << strength << endl;
 }
 
-void Warrior::GetWeapon()
+Weapon& Warrior::GetWeapon()
 {
-    Weapon weapon;
-    weapon.damage = 1;
-    weapon.name = "Кулаки";
-    weapons.push_back(weapon);
+    if (weapons.empty()) {
+        Weapon weapon;
+        weapon.damage = 1;
+        weapon.name = "Кулаки";
+        weapons.push_back(weapon);
 
-    cout << name << " взял в руки оружие " << weapons[0].name << endl;
-    cout << "Добавка к урона = " << weapons[0].damage << endl;
+        cout << name << " взял в руки оружие " << weapons[0].name << endl;
+        cout << "Добавка к урона = " << weapons[0].damage << endl;
+    }
+
+    return weapons.back();
 }
 
 void Warrior::Recalculate()
 {
-    damage += (1 + lvl * strenght * 0.1);
-    health += (1 + lvl * strenght * 0.1);
-    armor += (1 + lvl * strenght * 0.1);
+    damage += (1 + lvl * strength * 0.1);
+    health += (1 + lvl * strength * 0.1);
+    armor += (1 + lvl * strength * 0.1);
 }

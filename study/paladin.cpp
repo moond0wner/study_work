@@ -6,7 +6,7 @@ using namespace std;
 Paladin::Paladin()
 {
     intellect = 25;
-    strenght = 19;
+    strength = 19;
     health = 25;
     damage = 25;
 }
@@ -21,7 +21,6 @@ void Paladin::Create()
     cout << "Вы создали Паладина\nЗадайте имя игрока\n";
     cin >> name;
 
-    GetInfo();
     LearnSpell();
     GetWeapon();
 }
@@ -29,6 +28,6 @@ void Paladin::Create()
 void Paladin::GetInfo()
 {
     NPC::GetInfo();
-    cout << "Сила: " << strenght << endl;
+    cout << "Сила: " << strength << endl;
     cout << "Интеллект: " << intellect << endl;
 }

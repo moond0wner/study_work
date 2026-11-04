@@ -1,4 +1,2 @@
 run:
-	@cd study && \
-	g++ *.cpp -o ./main \
-	&& ./main
+	@cd study && g++ *.cpp -o ./main && ./main

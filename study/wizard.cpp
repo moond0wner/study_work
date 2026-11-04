@@ -30,7 +30,6 @@ void Wizard::Create()
     cout << "Вы создали Мага\nЗадайте имя игрока\n";
     cin >> name;
 
-    GetInfo();
     LearnSpell();
 }
 
@@ -40,15 +39,19 @@ void Wizard::GetInfo()
     cout << "Интеллект: " << intellect << endl;
 }
 
-void Wizard::LearnSpell()
+Spell& Wizard::LearnSpell()
 {
-    Spell spell;
-    spell.damage = 1;
-    spell.name = "Вспышка";
-    spells.push_back(spell);
+    if (spells.empty()) {
+        Spell spell;
+        spell.damage = 1;
+        spell.name = "Вспышка";
+        spells.push_back(spell);
 
-    cout << name << " Изучил заклинение " << spells[0].name << endl;
-    cout << "Добавка к урона = " << spells[0].damage << endl;
+        cout << name << " Изучил заклинание " << spells[0].name << endl;
+        cout << "Добавка к урона = " << spells[0].damage << endl;
+    }
+
+    return spells.back();
 }
 
 void Wizard::Recalculate()
