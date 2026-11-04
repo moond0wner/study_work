@@ -47,7 +47,7 @@ Spell& Wizard::LearnSpell()
         spell.name = "Вспышка";
         spells.push_back(spell);
 
-        cout << name << " Изучил заклинание " << spells[0].name << endl;
+        cout << name << " изучил заклинание " << spells[0].name << endl;
         cout << "Добавка к урона = " << spells[0].damage << endl;
     }
 
